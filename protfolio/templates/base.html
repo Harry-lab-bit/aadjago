@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+    
+    {% block title %}
+        harry
+    {% endblock title %}
+        
+  </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  {% comment %} <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> {% endcomment %}
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  
+  {% block stylesheet %}
+    
+  {% endblock stylesheet %}
+    
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="{% static 'assets/img/haroon.jpg' %}" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Welcome {{user.username}}</h1>
+    </a>
+
+    <div class="social-links text-center">
+      
+      <a href="https://www.facebook.com/profile.php?id=100086952450215" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/malik_haroon.ali/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.youtube.com/@malik_Haroon.58" class="youtube"><i class="bi bi-youtube"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="/blog" class="active"><i class="bi bi-house navicon"></i>Blog</a></li>
+        <li><a href="/about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="/contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="/internshipdetails"><i class="bi bi-person navicon"></i>Internship Form</a></li>
+        
+        {% if not request.user.is_authenticated %}
+        <li><a href="/auth/signup/"><i class="bi bi-person navicon"></i>SignUp</a></li>
+        
+        <li><a href="/auth/login/"><i class="bi bi-person navicon"></i>Login</a></li>
+        {% else %}
+        
+        <li><a href="/auth/logout/"><i class="bi bi-person navicon"></i>Logout</a></li>
+        
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+{% block hero %}
+    
+{% endblock hero %}
+    
+ <!-- Hero Section -->
+ <div class="text-center">
+    <section id="hero" class="hero section dark-background">
+      <img src="{% static 'assets/img/roha.png' %}" alt="" data-aos="fade-in" class="">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Malik Haroon Ali</h2>
+        <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+    </div>
+    </section><!-- /Hero Section -->
+
+
+
+    <main class="main">
+
+{% block body %}
+    
+{% endblock body %}
+
+  </main>
+
+
+
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+
+  
+  {% block scripts %}
+    
+  {% endblock scripts %}
+    
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/typed.js' %}/typed.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
